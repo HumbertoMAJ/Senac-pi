@@ -1,0 +1,81 @@
+﻿@model ProfiModel
+@{
+    ViewData["Title"] = "Editar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="text-center mt-4" >
+
+    <h2 class="display-5">Editar Profissional</h2>            
+</div>
+
+
+
+<form class="container" asp-controller="Home" asp-action="Alterar" method="post" >
+
+    <input type="hidden" asp-for="Id"/>
+
+          <div class="form-group p-2">
+        <label for="email">Endereço de E-mail</label>
+        <input type="email" asp-for="Email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Insira seu e-mail">
+       
+      </div>
+      <div class="form-group p-2">
+        <label for="nome">Nome</label>
+        <input type="text" asp-for="Nome" class="form-control" placeholder="Insira seu nome">
+      </div>
+      <div class="form-group p-2">
+        <label for="celular">Celular</label>
+        <input type="text" asp-for="Celular" class="form-control" placeholder="Insira numero de telefone">
+      </div>
+      <div class="form-group p-2">
+        <label for="formacao">Formação</label>
+        <input type="text" asp-for="Formacao" class="form-control" placeholder="Insira a sua formação">
+      </div>
+
+       <div class="form-group p-2">
+        <label for="experiencia">Anos de experiência</label>
+        <input type="text" asp-for="Experiencia" class="form-control"  placeholder="Insira o tempo de experiência">
+      </div>
+     
+    
+      <div class="d-grid gap-2 d-md-flex justfy-content-md-start">
+          
+      <button type="submit" class="btn btn-primary mt-3" role="button">Alterar</button>
+      </div>
+
+    </form>
+
+
+
+<footer class="fixed-bottom">
+    <div class=" row mx-auto border-top">
+            
+            <a class="col py-3 px-md-5 " style="margin-left:10px;" asp-controller="Home" asp-action="Index">
+            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
+              <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5z"/>
+            </svg>
+            </a>
+
+            <a class="col py-3 px-md-5" asp-controller="Home" asp-action="Procurar">
+                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                  <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+                </svg>
+
+            </a>
+                
+            <a class="col py-3 px-md-5" asp-controller="Agendamento" asp-action="Marcar">
+                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-calendar-event" viewBox="0 0 16 16">
+                  <path d="M11 6.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5z"/>
+                  <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4z"/>
+                </svg>
+            </a>
+                
+            <a class="col py-3 px-md-5" asp-controller="Home" asp-action="Perfil">
+                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+                  <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
+                </svg>
+            </a>
+     </div>
+</footer>
+

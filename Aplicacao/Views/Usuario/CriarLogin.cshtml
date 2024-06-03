@@ -1,0 +1,54 @@
+﻿@using Aplicacao.Enums
+@model UsuarioModel
+@{ 
+    ViewData["Title"] = "Criar Usuário";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="text-center mt-2" >
+
+    <h2 class="display-5">Cadastrar Usuário</h2>            
+</div>
+
+<form class="container" asp-controller="Usuario" asp-action="Criar" method="post">
+        <div class="form-group p-2">
+        <label for="email">Endereço de E-mail</label>
+        <input type="email" asp-for="Email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Insira seu e-mail">
+       
+      </div>
+      <div class="form-group p-2">
+        <label for="nome">Nome</label>
+        <input type="text" asp-for="Nome" class="form-control" placeholder="Insira seu nome">
+      </div>
+      <div class="form-group p-2">
+        <label for="celular">Login</label>
+        <input type="text" asp-for="Login" class="form-control" placeholder="Insira seu login">
+      </div>
+      <div class="form-group p-2">
+        <label for="formacao">Senha</label>
+        <input type="password" asp-for="Senha" class="form-control" placeholder="Insira a sua senha">
+      </div>
+
+      <div class="form-group p-2">
+        <label for="formacao">Perfil</label>
+        <select asp-for="Perfil" class="form-control mt-4">
+            <option value="0">Selecione</option>
+            <option value="@PerfilEnum.Admin">Administrador</option>
+            <option value="2">@PerfilEnum.Padrao</option>
+        </select>
+      </div
+
+      
+     
+    
+      <div class="d-grid gap-2 d-md-flex justfy-content-md-start">
+          
+      <button type="submit" class="btn btn-primary mt-3" role="button">Adicionar</button>
+      </div>
+
+    </form>
+
+
+
+
+

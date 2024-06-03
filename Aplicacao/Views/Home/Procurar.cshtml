@@ -1,0 +1,90 @@
+﻿@model List<ProfiModel>
+@{
+    ViewData["Title"] = "Pesquisar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="text-center mt-4" >
+
+    <div class="d-grid gap-2 d-md-flex justfy-content-md-start">
+        <a class="btn btn-primary" role="button" asp-controller="Home" asp-action="Criar">Adicionar Profissional</a>
+    </div>
+    
+    <div class="d-grid gap-2 d-md-flex justfy-content-md-start mt-3">
+        <a class="btn btn-primary" role="button" asp-controller="Agendamento" asp-action="MeuAgendamento">Agendados(as)</a>
+    </div>
+
+
+
+
+
+    <table class="table mt-4" id="table-profissionais">
+  <thead>
+    <tr>
+     
+      <th scope="col">Nome</th>
+      <th scope="col">Contato</th>
+      <th scope="col">Acesso</th>
+    </tr>
+  </thead>
+  <tbody>
+            @if (Model != null && Model.Any())
+            {
+                foreach (var profisao in Model)
+                {
+                    <tr>
+                        <td>@profisao.Nome</td>
+                        <td>@profisao.Celular</td>
+                    <td>
+                        <div class="btn-group" role="group" aria-label="Basic example">
+                            <a role="button" class="btn btn-primary" asp-route-id="@profisao.Id" asp-controller="Home" asp-action="Editar">Editar</a>
+                            <a role="button" class="btn btn-danger" asp-route-id="@profisao.Id"  asp-controller="Home" asp-action="Apagar">Apagar</a>         
+                        </div>
+                    </td>
+                </tr>
+                }
+            }
+
+  </tbody>
+</table>
+   
+            
+
+
+
+
+</div>
+
+
+
+<footer class="fixed-bottom">
+    <div class=" row mx-auto border-top">
+            
+            <a class="col py-3 px-md-5 " style="margin-left:10px;" asp-controller="Home" asp-action="Index">
+            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
+              <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5z"/>
+            </svg>
+            </a>
+
+            <a class="col py-3 px-md-5" asp-controller="Home" asp-action="Procurar">
+                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                  <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+                </svg>
+
+            </a>
+                
+            <a class="col py-3 px-md-5" asp-controller="Agendamento" asp-action="Marcar">
+                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-calendar-event" viewBox="0 0 16 16">
+                  <path d="M11 6.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5z"/>
+                  <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4z"/>
+                </svg>
+            </a>
+                
+            <a class="col py-3 px-md-5" asp-controller="Home" asp-action="Perfil">
+                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+                  <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
+                </svg>
+            </a>
+     </div>
+</footer>
+
